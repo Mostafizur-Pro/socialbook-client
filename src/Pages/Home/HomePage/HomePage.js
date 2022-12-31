@@ -9,10 +9,10 @@ const HomePage = () => {
     <div>
       <Navbar></Navbar>
       <div className="lg:grid lg:grid-cols-12 gap-4 mx-5 sm:none ">
-        <div className="col-span-3  ">
+        <div className="col-span-2  ">
           <LeftSideHome></LeftSideHome>
         </div>
-        <div className="col-span-7">
+        <div className="col-span-8">
           <MiddleHome></MiddleHome>
         </div>
         <div className="col-span-2  ">
