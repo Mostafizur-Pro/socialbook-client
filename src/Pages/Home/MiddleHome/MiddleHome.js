@@ -97,7 +97,7 @@ const MiddleHome = () => {
         </div>
       </div>
 
-      <section className="mt-10 bg-gray-200">
+      <section className="mt-10 rounded-xl bg-gray-200">
         <div className="card  ">
           <figure className="">
             <img
@@ -170,21 +170,18 @@ const MiddleHome = () => {
                   <img src="https://placeimg.com/191/191/people" />
                 </div>
               </div>
-              <div className="">
-                <h1 className="text-blue-400 text-base font-semibold">
-                  Drian Walton
-                </h1>
-                <p className="text-sm mb-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud
-                </p>
+              <div className="w-full mr-5">
+                <input
+                  type="text"
+                  placeholder="Post a comment"
+                  className="input input-bordered w-full"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="mt-10 bg-gray-200">
+      <section className="mt-10 rounded-xl bg-gray-200 mb-10">
         <div className="card  ">
           <figure className="">
             <img
@@ -257,15 +254,12 @@ const MiddleHome = () => {
                   <img src="https://placeimg.com/191/191/people" />
                 </div>
               </div>
-              <div className="">
-                <h1 className="text-blue-400 text-base font-semibold">
-                  Drian Walton
-                </h1>
-                <p className="text-sm mb-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud
-                </p>
+              <div className="w-full mr-5">
+                <input
+                  type="text"
+                  placeholder="Post a comment"
+                  className="input input-bordered w-full"
+                />
               </div>
             </div>
           </div>

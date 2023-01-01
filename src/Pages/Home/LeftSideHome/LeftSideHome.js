@@ -3,6 +3,7 @@ import {
   FaComments,
   FaImages,
   FaMinusCircle,
+  FaRegUser,
   FaUsers,
   FaVideo,
 } from "react-icons/fa";
@@ -20,8 +21,8 @@ const LeftSideHome = () => {
         </div>
       </section>
       <section className="flex justify-start items-center gap-2">
-        <div className="my-3  text-green-400">
-          <FaMinusCircle />
+        <div className="my-3  text-fuchsia-400">
+          <FaRegUser />
         </div>
         <div className="my-2 w-full text-left">
           People Nearby
