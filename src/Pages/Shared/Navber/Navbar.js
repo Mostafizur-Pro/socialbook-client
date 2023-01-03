@@ -1,19 +1,41 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Navbar = () => {
-  // const { user } = useContext(AuthContext);
-  // console.log("user", user);
+  const { user, logOut } = useContext(AuthContext);
+  const [users, setUsers] = useState([]);
+  console.log("userin", user?.email, users);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setUsers(data);
+      });
+  }, []);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
+  };
   const menuItem = (
     <>
       <li>
         <Link to="/">Home</Link>
       </li>
+      {user?.email ? (
+        <li onClick={handleLogOut}>
+          <Link>Logout</Link>
+        </li>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )}
 
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
       {/* <li>
         <Link to="/register">Register</Link>
       </li> */}
@@ -53,36 +75,45 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{menuItem}</ul>
         </div>
-
-        <div className="navbar-end">
-          <div className="flex-none">
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  {/* {user} */}
-                  <img src="https://placeimg.com/80/80/people" alt="" />
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <Link className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link>Settings</Link>
-                </li>
-                <li>
-                  <Link>Logout</Link>
-                </li>
-              </ul>
+        {users?.email ? (
+          <div className="navbar-end">
+            <div className="flex-none">
+              <div className="dropdown dropdown-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    {/* <img alt="" src="https://placeimg.com/80/80/people" /> */}
+                    {users?.email ? (
+                      <>
+                        <img src={users?.image} alt="" />
+                      </>
+                    ) : (
+                      <img alt="" src="https://placeimg.com/80/80/people" />
+                    )}
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <Link className="justify-between">
+                      Profile
+                      <span className="badge">New</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link>Settings</Link>
+                  </li>
+                  <li onClick={handleLogOut}>
+                    <Link>Logout</Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

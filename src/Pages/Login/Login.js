@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Navbar from "../Shared/Navber/Navbar";
 import "./Login.css";
 import bgCover from "../../assete/Login/bg-cover.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   FaFacebook,
   FaGithub,
@@ -16,9 +16,13 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
-  // const { signIn } = useContext(AuthContext);
-  // const [loginError, setLoginError] = useState("");
+  const { signIn } = useContext(AuthContext);
+  const [loginError, setLoginError] = useState("");
   useTitle("Login");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -28,16 +32,16 @@ const Login = () => {
 
   const hangleLogin = (data) => {
     console.log(data);
-    // signIn(data.email, data.password)
-    //   .then((result) => {
-    //     const user = result.user;
-    //     // setLoginUserEmail(user.email);
-    //     // navigate(from, { replace: true });
-    //     console.log("success", user);
-    //   })
-    //   .catch((error) => {
-    //     setLoginError(error.message);
-    //   });
+    signIn(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        // setLoginUserEmail(user.email);
+        navigate(from, { replace: true });
+        console.log("success", user);
+      })
+      .catch((error) => {
+        setLoginError(error.message);
+      });
   };
   return (
     <div>
@@ -166,9 +170,9 @@ const Login = () => {
                       </label>
                     </div>
                     <div>
-                      {/* {loginError && (
+                      {loginError && (
                         <p className="text-red-600">{loginError}</p>
-                      )} */}
+                      )}
                     </div>
                     <div className="form-control ">
                       <button className="btn btn-accent w-3/6 rounded-3xl text-white">

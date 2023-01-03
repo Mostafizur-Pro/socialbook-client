@@ -7,7 +7,7 @@ import {
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthProvider";
 import useTitle from "../../hooks/useTitle";
@@ -16,31 +16,50 @@ import Navbar from "../Shared/Navber/Navbar";
 
 const Register = () => {
   useTitle("Register");
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  // const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
 
   const hangleRegister = (data) => {
     // const userInfoFirebase = {
     //   displayName: data.FirstName + " " + data.LastName,
     //   photoUrl: data.image,
-    //   // birthday: data.day + "." + data.month + "." + data.year,
+    //   birthday: data.day + "." + data.month + "." + data.year,
+    //   data,
     // };
     // console.log("userInfoFirebase", userInfoFirebase);
     // updateUserProfile(userInfoFirebase);
     // console.log("Data", data);
-    // createUser(data.email, data.password)
-    //   .then((result) => {
-    //     const user = result.user;
-    //     console.log("User in createUser", user);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    saveUserInServer(data);
+    createUser(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        navigate("/");
+        // console.log("User in createUser", user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const saveUserInServer = (userInfo) => {
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log("saveUser", data);
+        // setCreatedUserEmail(userInfo.email);
+      });
   };
 
   // const updateUserProfile = (userInfofirebase) => {
@@ -231,7 +250,7 @@ const Register = () => {
                       <div className="flex justify-center gap-2 items-center">
                         <input
                           type="radio"
-                          name="gender"
+                          name="male"
                           {...register("male", {})}
                         />
                         <label>Male</label>
@@ -239,7 +258,7 @@ const Register = () => {
                       <div className="flex justify-center gap-2 items-center">
                         <input
                           type="radio"
-                          name="gender"
+                          name="female"
                           {...register("male", {})}
                           className="  w-full max-w-xs"
                         />
