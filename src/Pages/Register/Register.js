@@ -96,14 +96,14 @@ const Register = () => {
                 {/* Part-1 */}
                 <div className="flex flex-col  border-opacity-50">
                   {/* <div
-                class="mixed"
+                className="mixed"
                 className="grid  h-20 card bg-base-500 rounded-box place-items-center"
               >
                 <button className="btn glass">Login</button>
                 <div className="divider"></div>
               </div> */}
                   <div className=" glass p-5 rounded-l-lg   hidden lg:block ">
-                    <div class="box  mixed">
+                    <div className="box  mixed">
                       <Link
                         className="p-10 font-semibold text-gray-400"
                         to="/login"
@@ -112,7 +112,7 @@ const Register = () => {
                       </Link>
                     </div>
                     <hr className="w-1/2 mx-auto" />
-                    <div class="box mixed">
+                    <div className="box mixed">
                       <Link
                         className="p-10 font-semibold text-white"
                         to="/register"
@@ -122,7 +122,7 @@ const Register = () => {
                     </div>
                   </div>
                   <div className=" glass p-5 rounded-t-lg  flex  lg:hidden ">
-                    <div class="">
+                    <div className="">
                       <Link
                         className="p-10 font-semibold text-gray-400"
                         to="/login"
@@ -131,7 +131,7 @@ const Register = () => {
                       </Link>
                     </div>
                     <div className="w-1/2 flex mx-auto">|</div>
-                    <div class="">
+                    <div className="">
                       <Link
                         className="p-10 font-semibold text-white"
                         to="/register"

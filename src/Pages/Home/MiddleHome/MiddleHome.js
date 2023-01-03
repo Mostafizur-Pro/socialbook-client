@@ -1,14 +1,46 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { FaFileExport } from "react-icons/fa";
+import { AuthContext } from "../../../contexts/AuthProvider";
 import "./MiddleHome.css";
 
 const MiddleHome = () => {
+  const { user } = useContext(AuthContext);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setUsers(data);
+      });
+  }, []);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const handleUpdate = () => {
+    console.log();
+  };
+
+  const handlePost = (data) => {
+    console.log("post", data);
+    // ----------------------------------------------------
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    // ----------------------------------------------------
+  };
   return (
     <div>
       <section className="flex gap-5  justify-center items-center ">
         <div className="avatar">
           <div className="w-20 rounded-full">
-            <img src="https://placeimg.com/193/193/people" />
+            <img src={users?.image} />
           </div>
         </div>
         {/* Text Area */}
@@ -27,7 +59,10 @@ const MiddleHome = () => {
       {/* Put this part before </body> tag */}
       <input type="checkbox" id="my-modal-3" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative">
+        <form
+          onSubmit={handleSubmit(handlePost)}
+          className="modal-box relative"
+        >
           <label
             htmlFor="my-modal-3"
             className="btn btn-sm btn-circle absolute right-2 top-2"
@@ -39,26 +74,45 @@ const MiddleHome = () => {
           <section className="flex justify-start text-left gap-5">
             <div className="avatar">
               <div className="w-16 rounded-full">
-                <img src="https://placeimg.com/193/193/people" />
+                <img src={users?.image} />
               </div>
             </div>
             <div>
-              <h1 className="text-xl font-semibold">Mostafizur rahman</h1>
-              <select>
-                <option>Public</option>
+              <h1 className="text-xl font-semibold">
+                {users?.FirstName} {users?.LastName}{" "}
+              </h1>
+
+              <select
+                {...register("condition", {
+                  required: "Must be selected user",
+                })}
+                // className="select select-bordered  max-w-lg"
+              >
+                <option selected>Public</option>
                 <option>Friend</option>
                 <option>Private</option>
               </select>
+              {/* <select>
+                <option>Public</option>
+                <option>Friend</option>
+                <option>Private</option>
+              </select> */}
             </div>
           </section>
           <div>
             <textarea
+              {...register("title", {
+                required: "Your product name is required",
+              })}
+              className="textarea textarea-bordered w-full h-32 my-5"
+            />
+            {/* <textarea
               className="textarea textarea-bordered w-full h-32 my-5"
               placeholder="Write what you wish"
-            ></textarea>
+            ></textarea> */}
           </div>{" "}
           <section className="border border-gray-400 rounded-xl mb-5 p-5 text-left flex justify-between">
-            <div class="">Add Image </div>
+            <div className="">Add Image </div>
             <div className="tooltip" data-tip="Image">
               {/* <span
                   htmlFor="my-modal-2"
@@ -72,29 +126,43 @@ const MiddleHome = () => {
               >
                 <FaFileExport />
               </label>
+              <div>
+                <label className="label">
+                  {" "}
+                  <span className="label">Select Your Image</span>
+                </label>
+                <input
+                  type="file"
+                  {...register("image", {
+                    required: "Photo is Required",
+                  })}
+                  className=" input-bordered w-full max-w-xs"
+                />
+                {errors.image && (
+                  <p className="text-red-500">{errors.image.message}</p>
+                )}
+              </div>
             </div>
           </section>
           <button className="btn rounded-xl w-full capitalize  text-white text-xl">
             Post
           </button>
-        </div>
+        </form>
       </div>
 
-      {/* Modal */}
+      {/* Modal image*/}
       <input type="checkbox" id="my-modal-6" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
+        <form onSubmit={handleUpdate} className="modal-box">
           <h3 className="font-bold text-lg mb-5">Select Your Image</h3>
-          <input
-            type="file"
-            className="file-input file-input-bordered w-full max-w-xs"
-          />
+          <input type="file" className=" input-bordered w-full max-w-xs" />
+
           <div className="modal-action">
             <label htmlFor="my-modal-6" className="btn">
               Update
             </label>
           </div>
-        </div>
+        </form>
       </div>
 
       <section className="mt-10 rounded-xl bg-gray-200">
