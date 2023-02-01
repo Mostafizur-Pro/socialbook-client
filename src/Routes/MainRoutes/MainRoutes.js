@@ -7,9 +7,14 @@ import HomePage from "../../Pages/Home/HomePage/HomePage";
 import Login from "../../Pages/Login/Login";
 import NewsFeedPage from "../../Pages/NewsFeed/NewsFeedPage/NewsFeedPage";
 import Register from "../../Pages/Register/Register";
+import ErrorPage from "../../Pages/Shared/ErrorPage/ErrorPage";
 import TimelinePage from "../../Pages/Timeline/TimelinePage/TimelinePage";
 
 const router = createBrowserRouter([
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
   {
     path: "/",
     element: <Main />,
