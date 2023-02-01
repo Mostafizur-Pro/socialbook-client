@@ -9,6 +9,7 @@ import {
   FaSearchLocation,
   FaTwitter,
 } from "react-icons/fa";
+import Footer from "../../Shared/Footer/Footer";
 
 const ContactPage = () => {
   const handleSubmit = () => {
@@ -110,6 +111,9 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="absolute w-full bottom-0">
+        <Footer />
       </div>
     </div>
   );
