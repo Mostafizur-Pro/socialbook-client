@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../../Shared/Footer/Footer";
 
 const Question = () => {
   return (
@@ -198,7 +197,6 @@ const Question = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

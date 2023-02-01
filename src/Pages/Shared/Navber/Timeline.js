@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Timeline = () => {
   return (
@@ -104,9 +105,12 @@ const Timeline = () => {
             <aside class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500">
               Account Settings
             </aside>
-            <aside class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500">
+            <Link
+              to="/changepassword"
+              class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500"
+            >
               Change Password
-            </aside>
+            </Link>
           </nav>
         </div>
       </div>

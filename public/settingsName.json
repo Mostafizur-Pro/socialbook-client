@@ -1,0 +1,33 @@
+[
+    {
+    "_id": 1,
+    "category":"Basic Information",
+    "name":"basic-information"
+
+},
+    {
+    "_id": 2,
+    "category":"Education and work",
+    "name":"education-and-work"
+
+},
+    {
+    "_id": 3,
+    "category":"My Interests",
+    "name":"my-interests"
+
+},
+    {
+    "_id": 4,
+    "category":"Account Settings",
+    "name":"account-settings"
+
+
+},
+    {
+    "_id": 5,
+    "category":"Change Password",
+    "name":"change-password"
+
+}
+]

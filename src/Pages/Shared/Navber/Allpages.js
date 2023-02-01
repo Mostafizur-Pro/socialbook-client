@@ -36,12 +36,18 @@ const Allpages = () => {
             >
               FAQ Pages
             </Link>
-            <aside class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500">
+            <Link
+              to="/blog"
+              class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500"
+            >
               Blog Pages
-            </aside>
-            <aside class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500">
+            </Link>
+            <Link
+              to="*"
+              class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500"
+            >
               404 Not Found
-            </aside>
+            </Link>
           </nav>
         </div>
       </div>
