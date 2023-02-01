@@ -35,6 +35,18 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         </li>
       )}
+      <li>
+        <Link to="/">Newsfeed</Link>
+      </li>
+      <li>
+        <Link to="/">Timeline</Link>
+      </li>
+      <li>
+        <Link to="/">All Pages</Link>
+      </li>
+      <li>
+        <Link to="/">Contact</Link>
+      </li>
 
       {/* <li>
         <Link to="/register">Register</Link>
