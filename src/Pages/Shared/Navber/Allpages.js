@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Allpages = () => {
   return (
@@ -29,9 +30,12 @@ const Allpages = () => {
           className="dropdown-content menu p-2 shadow bg-white w-52 mt-[31px]"
         >
           <nav aria-label="Main Nav" class="flex flex-col space-y-1">
-            <aside class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500">
+            <Link
+              to="/faq"
+              class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500"
+            >
               FAQ Pages
-            </aside>
+            </Link>
             <aside class="flex items-center duration-100 hover:border-l-[3px] hover:border-blue-500 hover:bg-blue-50 px-4 py-3 hover:text-blue-700 text-gray-500">
               Blog Pages
             </aside>
