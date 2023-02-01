@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import Allpages from "./Allpages";
+import Newsfeed from "./Newsfeed";
+import Timeline from "./Timeline";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -26,6 +29,19 @@ const Navbar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
+
+      <li>
+        <Newsfeed />
+      </li>
+      <li>
+        <Timeline />
+      </li>
+      <li>
+        <Allpages />
+      </li>
+      <li>
+        <Link to="/contact">Contact</Link>
+      </li>
       {users?.email ? (
         <li onClick={handleLogOut}>
           <Link>Logout</Link>
@@ -35,18 +51,6 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         </li>
       )}
-      <li>
-        <Link to="/newsfeed">Newsfeed</Link>
-      </li>
-      <li>
-        <Link to="/timeline">Timeline</Link>
-      </li>
-      <li>
-        <Link to="/allpages">All Pages</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
-      </li>
 
       {/* <li>
         <Link to="/register">Register</Link>
