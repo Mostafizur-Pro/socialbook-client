@@ -7,7 +7,7 @@ import RightSideHome from "../RightSideHome/RightSideHome";
 const HomePage = () => {
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <div className="lg:grid lg:grid-cols-12 gap-4 mx-5 sm:none ">
         <div className="col-span-2  ">
           <LeftSideHome></LeftSideHome>

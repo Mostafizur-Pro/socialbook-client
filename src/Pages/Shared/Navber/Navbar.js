@@ -36,16 +36,16 @@ const Navbar = () => {
         </li>
       )}
       <li>
-        <Link to="/">Newsfeed</Link>
+        <Link to="/newsfeed">Newsfeed</Link>
       </li>
       <li>
-        <Link to="/">Timeline</Link>
+        <Link to="/timeline">Timeline</Link>
       </li>
       <li>
-        <Link to="/">All Pages</Link>
+        <Link to="/allpages">All Pages</Link>
       </li>
       <li>
-        <Link to="/">Contact</Link>
+        <Link to="/contact">Contact</Link>
       </li>
 
       {/* <li>
