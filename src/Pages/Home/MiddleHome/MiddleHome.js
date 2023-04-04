@@ -40,7 +40,11 @@ const MiddleHome = () => {
       <section className="flex gap-5  justify-center items-center ">
         <div className="avatar">
           <div className="w-20 rounded-full">
-            <img src={users?.image} />
+            {/* <img src={users?.image} /> */}
+            <img
+              alt="image"
+              src="https://mediaproxy.salon.com/width/1200/https://media.salon.com/2016/08/life_essay_catfish_featured.jpg"
+            />
           </div>
         </div>
         {/* Text Area */}
@@ -74,7 +78,11 @@ const MiddleHome = () => {
           <section className="flex justify-start text-left gap-5">
             <div className="avatar">
               <div className="w-16 rounded-full">
-                <img src={users?.image} />
+                {/* <img src={users?.image} /> */}
+                <img
+                  alt="image"
+                  src="https://mediaproxy.salon.com/width/1200/https://media.salon.com/2016/08/life_essay_catfish_featured.jpg"
+                />
               </div>
             </div>
             <div>
@@ -170,14 +178,14 @@ const MiddleHome = () => {
           <figure className="">
             <img
               className="w-full"
-              src="https://placeimg.com/400/225/arch"
+              src="https://img.freepik.com/free-vector/savannah-landscape-with-acacia-trees-night-vector-cartoon-illustration-african-savanna-with-full-moon-stars-dark-sky-concept-safari-vacation-trip-travel_107791-11532.jpg?w=2000"
               alt="Shoes"
             />
           </figure>
           <div className="flex gap-5 justify-start items-center m-3">
             <div className="avatar ">
               <div className="w-20 rounded-full ">
-                <img src="https://placeimg.com/193/193/people" />
+                <img src="https://cdn.theorg.com/58dde501-b133-4d94-bbf8-0a221413ced4_thumb.jpg" />
               </div>
             </div>
             <div className="">
@@ -201,12 +209,12 @@ const MiddleHome = () => {
             <div className="flex gap-5 justify-start items-center mt-3">
               <div className="avatar ">
                 <div className="w-12 rounded-full ">
-                  <img src="https://placeimg.com/193/193/people" />
+                  <img src="https://media.istockphoto.com/id/155431546/photo/young-man-profile.jpg?s=612x612&w=0&k=20&c=ptdl8HgleBpK7kECIeEQORphqysBlsSOouDAEwhjIpY=" />
                 </div>
               </div>
               <div className="">
                 <h1 className="text-blue-400 text-base font-semibold">
-                  Mostafizur Rahman
+                  Noman Islam
                 </h1>
                 <p className="text-sm mb-5">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -218,12 +226,12 @@ const MiddleHome = () => {
             <div className="flex gap-5 justify-start items-center mt-3">
               <div className="avatar ">
                 <div className="w-12 rounded-full ">
-                  <img src="https://placeimg.com/193/193/people" />
+                  <img src="https://us.123rf.com/450wm/fizkes/fizkes2011/fizkes201102042/159430998-headshot-portrait-profile-picture-of-pretty-smiling-young-woman-posing-indoors-looking-at-camera.jpg?ver=6" />
                 </div>
               </div>
               <div className="">
                 <h1 className="text-blue-400 text-base font-semibold">
-                  Mostafizur Rahman
+                  Fatema Howladar
                 </h1>
                 <p className="text-sm mb-5">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -235,7 +243,7 @@ const MiddleHome = () => {
             <div className="flex gap-5 justify-start items-center mt-3">
               <div className="avatar ">
                 <div className="w-12 rounded-full ">
-                  <img src="https://placeimg.com/191/191/people" />
+                  <img src="https://mediaproxy.salon.com/width/1200/https://media.salon.com/2016/08/life_essay_catfish_featured.jpg" />
                 </div>
               </div>
               <div className="w-full mr-5">
@@ -254,19 +262,19 @@ const MiddleHome = () => {
           <figure className="">
             <img
               className="w-full"
-              src="https://placeimg.com/400/226/arch"
+              src="hhttps://img.freepik.com/premium-vector/wildfires-are-burning-near-city-limits_353206-619.jpg"
               alt="Shoes"
             />
           </figure>
           <div className="flex gap-5 justify-start items-center m-3">
             <div className="avatar ">
               <div className="w-20 rounded-full ">
-                <img src="https://placeimg.com/193/193/people" />
+                <img src="https://perfectczechwomen.com/wp-content/uploads/2019/04/New-Profile-15-500x580.jpg" />
               </div>
             </div>
             <div className="">
               <h1 className="text-blue-400 text-2xl font-semibold">
-                Mostafizur Rahman
+                Alexis Clark
               </h1>
               <p className="text-sm">Published a photo about 4 mins ago</p>
             </div>
@@ -285,12 +293,27 @@ const MiddleHome = () => {
             <div className="flex gap-5 justify-start items-center mt-3">
               <div className="avatar ">
                 <div className="w-12 rounded-full ">
-                  <img src="https://placeimg.com/193/193/people" />
+                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80" />
+                </div>
+              </div>
+              <div className="">
+                <h1 className="text-blue-400 text-base font-semibold">John</h1>
+                <p className="text-sm mb-5">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-5 justify-start items-center mt-3">
+              <div className="avatar ">
+                <div className="w-12 rounded-full ">
+                  <img src="https://perfectczechwomen.com/wp-content/uploads/2019/04/New-Profile-10-500x530.jpg" />
                 </div>
               </div>
               <div className="">
                 <h1 className="text-blue-400 text-base font-semibold">
-                  Mostafizur Rahman
+                  Sophia page
                 </h1>
                 <p className="text-sm mb-5">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -302,24 +325,7 @@ const MiddleHome = () => {
             <div className="flex gap-5 justify-start items-center mt-3">
               <div className="avatar ">
                 <div className="w-12 rounded-full ">
-                  <img src="https://placeimg.com/193/193/people" />
-                </div>
-              </div>
-              <div className="">
-                <h1 className="text-blue-400 text-base font-semibold">
-                  Mostafizur Rahman
-                </h1>
-                <p className="text-sm mb-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-5 justify-start items-center mt-3">
-              <div className="avatar ">
-                <div className="w-12 rounded-full ">
-                  <img src="https://placeimg.com/191/191/people" />
+                  <img src="https://mediaproxy.salon.com/width/1200/https://media.salon.com/2016/08/life_essay_catfish_featured.jpg" />
                 </div>
               </div>
               <div className="w-full mr-5">
